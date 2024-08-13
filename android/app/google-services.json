@@ -1,0 +1,179 @@
+{
+  "project_info": {
+    "project_number": "562410516751",
+    "project_id": "marwa-911fd",
+    "storage_bucket": "marwa-911fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562410516751:android:ec0c92bfce9a110c510e7a",
+        "android_client_info": {
+          "package_name": "com.arcplan.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "562410516751-hiidjnprgh9tmmbvq85kmi86k948vt2f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.arcplan.app",
+            "certificate_hash": "730c28898ed4f89cd88cb7d8eac3263b1de7d3c2"
+          }
+        },
+        {
+          "client_id": "562410516751-1im3j2l4m0qe5inhrldlnecgbrruml25.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkcqIk-Fl96sGDtrqtVU1xbAIUyTq0KWg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "562410516751-1im3j2l4m0qe5inhrldlnecgbrruml25.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562410516751:android:de73bc0a0c4bb32c510e7a",
+        "android_client_info": {
+          "package_name": "com.elprof.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "562410516751-c5skg2sger24l77hgac7lu7vsk6mg463.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.elprof.app",
+            "certificate_hash": "84a571a8440bbc9e9695ed2b1eefbf337ef3acf9"
+          }
+        },
+        {
+          "client_id": "562410516751-1im3j2l4m0qe5inhrldlnecgbrruml25.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkcqIk-Fl96sGDtrqtVU1xbAIUyTq0KWg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "562410516751-1im3j2l4m0qe5inhrldlnecgbrruml25.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562410516751:android:9d8178c28f7c5409510e7a",
+        "android_client_info": {
+          "package_name": "com.italent.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "562410516751-vkvqgsime08clncvbcbo9ejlr9qj7suv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.italent.app",
+            "certificate_hash": "22d83df9e8f8d9aaac52f44dad5d9f33219fb13b"
+          }
+        },
+        {
+          "client_id": "562410516751-1im3j2l4m0qe5inhrldlnecgbrruml25.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkcqIk-Fl96sGDtrqtVU1xbAIUyTq0KWg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "562410516751-1im3j2l4m0qe5inhrldlnecgbrruml25.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562410516751:android:9771c898751bc253510e7a",
+        "android_client_info": {
+          "package_name": "com.mafaza.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "562410516751-1im3j2l4m0qe5inhrldlnecgbrruml25.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkcqIk-Fl96sGDtrqtVU1xbAIUyTq0KWg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "562410516751-1im3j2l4m0qe5inhrldlnecgbrruml25.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562410516751:android:4d4e8e0bf4fd1af0510e7a",
+        "android_client_info": {
+          "package_name": "com.marwa.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "562410516751-1im3j2l4m0qe5inhrldlnecgbrruml25.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkcqIk-Fl96sGDtrqtVU1xbAIUyTq0KWg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "562410516751-1im3j2l4m0qe5inhrldlnecgbrruml25.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

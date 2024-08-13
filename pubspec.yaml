@@ -1,0 +1,52 @@
+name: elprof
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.2
+environment:
+  sdk: '>=3.4.0-282.3.beta <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+    
+  cupertino_icons: ^1.0.0
+  flutter_windowmanager: ^0.2.0
+  flutter_android_developer_mode: 1.0.0
+  device_info_plus: ^10.1.0
+  package_info_plus: ^8.0.0
+  root_checker_plus: ^0.0.3
+  connectivity_plus: ^3.0.3
+  internet_connectivity_checker: ^1.0.2
+  flutter_inappwebview: ^5.7.2+3
+  flutter_svg: ^2.0.10+1
+  flutter_launcher_icons: ^0.13.1
+  flutter_hooks: ^0.18.0
+  flutter_web_auth: ^0.5.0
+  fluttertoast: ^8.2.6
+  shared_preferences: ^2.2.3
+  google_sign_in: ^6.2.1
+  googleapis: ^13.1.0
+  googleapis_auth: ^1.6.0
+  firebase_auth: ^5.1.3
+  firebase_core: ^3.3.0
+  cloud_firestore: ^5.2.0
+  google_fonts: ^6.2.1
+
+flutter_icons:
+  android: true
+  ios: true
+  min_sdk_android: 21
+  image_path: "assets/logo.png"
+  adaptive_icon_foreground: "assets/maskable-icon.png"
+  adaptive_icon_background: "#000000"
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/

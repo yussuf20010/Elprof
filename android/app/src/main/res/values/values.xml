@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="project_id" translatable="false">marwa-911fd</string>
+    <string name="app_id" translatable="false">1:562410516751:android:9771c898751bc253510e7a</string>
+    <string name="api_key" translatable="false">AIzaSyDkcqIk-Fl96sGDtrqtVU1xbAIUyTq0KWg</string>
+    <string name="firebase_database_url" translatable="false">https://marwa-911fd.appspot.com</string>
+    <string name="google_storage_bucket" translatable="false">marwa-911fd.appspot.com</string>
+</resources>
