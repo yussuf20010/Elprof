@@ -100,7 +100,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'ITalent',
+      title: 'ُEl Prof',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.red,
@@ -111,7 +111,7 @@ class MyApp extends StatelessWidget {
 
   Widget _getHomePage() {
     if (isEmulator || isDeveloperModeEnabled || isRooted || !isVersionValid) {
-      return SplashScreen(); // Show WarningPage for invalid conditions
+      return WarningPage(); // Show WarningPage for invalid conditions
     } else {
       return SplashScreen();
     }

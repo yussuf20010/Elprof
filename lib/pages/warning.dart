@@ -29,7 +29,7 @@ class _WarningPageState extends State<WarningPage> {
               ),
               const SizedBox(height: 20),
               Text(
-                'Error',
+                'غير مسموح',
                 style: TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.bold,

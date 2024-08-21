@@ -101,7 +101,7 @@ class _WebViewExampleState extends State<WebViewExample> with WidgetsBindingObse
       DateTime now = DateTime.now();
       if (lastPressed == null || now.difference(lastPressed!) > Duration(seconds: 2)) {
         lastPressed = now;
-        Fluttertoast.showToast(msg: 'Press again to exit');
+        Fluttertoast.showToast(msg: 'إضغط مرة أخري للخروج');
         return Future.value(false);
       }
       return Future.value(true);
@@ -192,11 +192,11 @@ class _WebViewExampleState extends State<WebViewExample> with WidgetsBindingObse
                             color: Colors.yellow,
                             child: Row(
                               children: [
-                                _buildNavText('All Courses'),
-                                _buildNavText('My Calendar'),
-                                _buildNavText('My Dashboard'),
-                                _buildNavText('My Profile'),
-                                _buildNavText('Logout'),
+                                _buildNavText('تسجيل خروج'),
+                                _buildNavText('الملف الشخصي'),
+                                _buildNavText('لوحة التحكم'),
+                                _buildNavText('التقويم'),
+                                _buildNavText('المقررات المتاحة'),
                               ],
                             ),
                           ),
@@ -211,11 +211,11 @@ class _WebViewExampleState extends State<WebViewExample> with WidgetsBindingObse
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                _buildIcon('assets/courses.svg', 'https://lms.elprof.cloud/course/'),
-                                _buildIcon('assets/calendar.svg', 'https://lms.elprof.cloud/calendar/view.php?view=month'),
-                                _buildIcon('assets/dashboard.svg', 'https://lms.elprof.cloud/my/'),
-                                _buildIcon('assets/profile.svg', 'https://lms.elprof.cloud/user/profile.php'),
                                 _buildIcon('assets/logout.svg', '', isLogout: true),
+                                _buildIcon('assets/profile.svg', 'https://lms.elprof.cloud/user/profile.php'),
+                                _buildIcon('assets/dashboard.svg', 'https://lms.elprof.cloud/my/'),
+                                _buildIcon('assets/calendar.svg', 'https://lms.elprof.cloud/calendar/view.php?view=month'),
+                                _buildIcon('assets/courses.svg', 'https://lms.elprof.cloud/course/'),
                               ],
                             ),
                           ),
@@ -245,7 +245,7 @@ class _WebViewExampleState extends State<WebViewExample> with WidgetsBindingObse
           style: GoogleFonts.yaldevi(
             textStyle: TextStyle(
               color: Color(0xFF672c7b),
-              fontSize: 10,
+              fontSize: 11,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -286,16 +286,16 @@ class _WebViewExampleState extends State<WebViewExample> with WidgetsBindingObse
       barrierDismissible: false,
       builder: (context) {
         return AlertDialog(
-          title: Text('Confirm Logout'),
-          content: Text('Are you sure you want to logout?'),
+          title: Text('تسجيل خروج'),
+          content: Text('هل أنت متأكد من تسجيل الخروج'),
           actions: <Widget>[
             TextButton(
-              onPressed: () => Navigator.of(context).pop(true),
-              child: Text('Yes'),
+              onPressed: () => Navigator.of(context).pop(false),
+              child: Text('لا'),
             ),
             TextButton(
-              onPressed: () => Navigator.of(context).pop(false),
-              child: Text('No'),
+              onPressed: () => Navigator.of(context).pop(true),
+              child: Text('نعم'),
             ),
           ],
         );
@@ -317,15 +317,15 @@ class _WebViewExampleState extends State<WebViewExample> with WidgetsBindingObse
       barrierDismissible: false,
       builder: (context) {
         return AlertDialog(
-          title: Text('No Network'),
-          content: Text('No network connection detected. Please check your network settings and refresh.'),
+          title: const Text('خطأ في الشبكة'),
+          content: const Text('برجاء فحص شبكة الإنترنت'),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
                 _initializeWebView();
               },
-              child: Text('Refresh'),
+              child: Text('تحديث'),
             ),
           ],
         );

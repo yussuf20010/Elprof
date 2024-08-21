@@ -52,6 +52,9 @@ Future<Map<String, dynamic>?> readCookies() async {
   }
 }
 
+int _retryCount = 0;
+final int _maxRetries = 2;
+
 Future<void> _signInWithGoogle(BuildContext context) async {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   await Firebase.initializeApp(
@@ -61,10 +64,10 @@ Future<void> _signInWithGoogle(BuildContext context) async {
   try {
     // Initiating the sign-in process
     final GoogleSignInAccount? googleSignInAccount = await _googleSignIn.signIn();
-    print('Google user: $googleSignInAccount');
+    // print('Google user: $googleSignInAccount');
 
     if (googleSignInAccount == null) {
-      Fluttertoast.showToast(msg: 'Sign-in canceled.');
+      Fluttertoast.showToast(msg: 'تم الإلغاء.');
       return;
     }
 
@@ -82,16 +85,12 @@ Future<void> _signInWithGoogle(BuildContext context) async {
                 valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
               ),
               SizedBox(width: 20),
-              Text('Signing In...'),
+              Text('...برجاء الانتظار'),
             ],
           ),
         );
       },
     );
-
-    // Print the authentication details
-    // print('Google ID Token: ${googleSignInAuthentication.idToken}');
-    // print('Google Access Token: ${googleSignInAuthentication.accessToken}');
 
     // Creating Firebase credential with the obtained Google authentication tokens
     final AuthCredential credential = GoogleAuthProvider.credential(
@@ -133,23 +132,33 @@ Future<void> _signInWithGoogle(BuildContext context) async {
           ),
         );
       } else {
+        // No cookies obtained, retry if allowed
         _retrySignIn(context);
       }
     } else {
+      // No ID token obtained, retry if allowed
       _retrySignIn(context);
     }
   } catch (error) {
     if (error.toString().contains('404')) {
-      _retrySignIn(context); // Retry if the error is 404
+      // Handle retry for 404 error
+      _retrySignIn(context);
     } else {
-      Fluttertoast.showToast(msg: 'Sign-in error: ${error.toString()}');
+      // Other errors
+      Fluttertoast.showToast(msg: 'حدث خطا؟');
     }
   }
 }
 
 Future<void> _retrySignIn(BuildContext context) async {
-  _signInWithGoogle(context);
+  if (_retryCount < _maxRetries) {
+    _retryCount++;
+    await _signInWithGoogle(context);
+  } else {
+    // Fluttertoast.showToast(msg: 'Sign-in failed after $_maxRetries attempts.');
+  }
 }
+
 final GoogleSignIn _googleSignIn = GoogleSignIn();
 
 // Function to send the encoded token and Moodle URL to the API
@@ -254,11 +263,11 @@ class _LoginPageState extends State<LoginPage> {
       barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('No Network'),
-          content: const Text('Please check your connection and try again.'),
+          title: const Text('خطأ في الشبكة'),
+          content: const Text('برجاء فحص شبكة الإنترنت'),
           actions: <Widget>[
             TextButton(
-              child: const Text('OK'),
+              child: const Text('فهمت'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -291,7 +300,7 @@ class _LoginPageState extends State<LoginPage> {
                   valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
                 ),
                 SizedBox(width: 20),
-                Text('Loading...'),
+                Text('...برجاء الانتظار'),
               ],
             ),
           );
@@ -330,7 +339,7 @@ class _LoginPageState extends State<LoginPage> {
         _handleResponse(response, targetUrl);
       } catch (e) {
         Navigator.of(context).pop();
-        Fluttertoast.showToast(msg: 'An error occurred: $e');
+        // Fluttertoast.showToast(msg: 'An error occurred: $e');
       }
     }
   }
@@ -356,13 +365,13 @@ class _LoginPageState extends State<LoginPage> {
             ),
           );
         } else {
-          // Fluttertoast.showToast(msg: 'No cookies found in the response.');
+          Fluttertoast.showToast(msg: 'خطأ في التسجيل, حاول مجددا');
         }
       } else {
         // Fluttertoast.showToast(msg: 'Login failed: ${responseJson['message']}');
       }
     } else {
-      Fluttertoast.showToast(msg: 'Login failed with status code: ${response.statusCode}');
+      // Fluttertoast.showToast(msg: 'Login failed with status code: ${response.statusCode}');
     }
   }
 
@@ -393,10 +402,10 @@ class _LoginPageState extends State<LoginPage> {
                   Form(
                     key: _formKey,
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: <Widget>[
                         Text(
-                          'Username',
+                          'اسم المستخدم',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,
@@ -416,17 +425,22 @@ class _LoginPageState extends State<LoginPage> {
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
                             ),
+                            errorStyle: TextStyle(
+                              color: Colors.yellow, // Change this to the desired color
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14,
+                            ),
                           ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Please enter your email';
+                              return 'رجاء أدخل اسم المستخدم'; // Validator message text
                             }
                             return null;
                           },
                         ),
                         SizedBox(height: 10),
                         Text(
-                          'Password',
+                          'كلمة المرور',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,
@@ -446,11 +460,17 @@ class _LoginPageState extends State<LoginPage> {
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
                             ),
+                            errorStyle: TextStyle(
+                              color: Colors.yellow, // Change this to the desired color
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14,
+                            ),
                           ),
                           obscureText: true,
+
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Please enter your password';
+                              return 'رجاء أدخل كلمة السر';
                             }
                             return null;
                           },
@@ -461,8 +481,8 @@ class _LoginPageState extends State<LoginPage> {
                           child: ElevatedButton.icon(
                             onPressed: _login,
                             label: Text(
-                              'Login',
-                              style: TextStyle(color: Colors.purple,fontWeight: FontWeight.bold),
+                              'تسجيل الدخول',
+                              style: TextStyle(color: Colors.purple,fontWeight: FontWeight.bold, fontSize: 20),
                             ),
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.yellow,
@@ -480,7 +500,7 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox(height: 10),
                         Center(
                           child: Text(
-                            'OR',
+                            'أو',
                             style: TextStyle(
                               color: Colors.yellow,
                               fontSize: 16,
@@ -500,7 +520,7 @@ class _LoginPageState extends State<LoginPage> {
                               height: 20,
                             ),
                             label: Text(
-                              'Login with Google',
+                              'تسجيل الدخول عن طريق',
                               style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
                             ),
                             style: ElevatedButton.styleFrom(
@@ -518,7 +538,7 @@ class _LoginPageState extends State<LoginPage> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 200.0),
+                  SizedBox(height: 150),
                   Text(
                     'El Prof © 2024 Designed by Learnock',
                     style: TextStyle(
