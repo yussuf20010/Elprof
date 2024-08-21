@@ -46,17 +46,51 @@ class _WebViewExampleState extends State<WebViewExample> with WidgetsBindingObse
   }
 
   Future<void> _initializeWebView() async {
-    for (var entry in widget.cookies.entries) {
+    // print('Initializing WebView with cookies: ${widget.cookies}');
+
+    // Combine API cookies with Google cookies
+    Map<String, String> combinedCookies = Map.from(widget.cookies);
+
+    // Add Google cookies
+    Map<String, String> googleCookies = await _getGoogleCookies();
+    combinedCookies.addAll(googleCookies);
+
+    // Set all cookies
+    for (var entry in combinedCookies.entries) {
       await _cookieManager.setCookie(
         url: Uri.parse(widget.targetUrl),
         name: entry.key,
         value: entry.value,
       );
+      // print('Cookie set: ${entry.key}=${entry.value}');
     }
 
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    String? savedUrl = prefs.getString('savedUrl');
-    _webViewController?.loadUrl(urlRequest: URLRequest(url: Uri.parse(savedUrl ?? widget.targetUrl)));
+    // Once cookies are set, load the URL
+    _webViewController?.loadUrl(urlRequest: URLRequest(url: Uri.parse(widget.targetUrl)));
+    // print('Loaded URL: ${widget.targetUrl}');
+  }
+
+// Function to retrieve Google cookies
+  Future<Map<String, String>> _getGoogleCookies() async {
+    Map<String, String> googleCookies = {};
+
+    try {
+      // Retrieve cookies from Google's domain
+      List<Cookie> cookies = await _cookieManager.getCookies(
+        url: Uri.parse('https://accounts.google.com'),
+      );
+
+      // Convert the List<Cookie> to a Map<String, String>
+      for (var cookie in cookies) {
+        googleCookies[cookie.name] = cookie.value;
+      }
+
+      // print('Google cookies: $googleCookies');
+    } catch (error) {
+      // print('Failed to retrieve Google cookies: $error');
+    }
+
+    return googleCookies;
   }
 
   Future<bool> _onWillPop() async {

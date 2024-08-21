@@ -17,7 +17,7 @@ class _WarningPageState extends State<WarningPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.white, // Set background color to black
+        color: Colors.black, // Set background color to black
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -29,12 +29,11 @@ class _WarningPageState extends State<WarningPage> {
               ),
               const SizedBox(height: 20),
               Text(
-                'Error 404\n'
-                'Page not found',
+                'Error',
                 style: TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xFF672c7b),
+                  color: Colors.white,
                 ),
                 textAlign: TextAlign.center,
               ),

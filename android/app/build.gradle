@@ -30,7 +30,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    namespace = "com.elprof.app"
+    namespace = "com.prof.app"
     compileSdk = 34
     ndkVersion = flutter.ndkVersion
 
@@ -40,7 +40,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.elprof.app"
+        applicationId = "com.prof.app"
         minSdk = 23
         targetSdk = 34
         versionCode = flutterVersionCode.toInteger()
@@ -59,7 +59,19 @@ android {
         release {
             signingConfig signingConfigs.release
         }
+        debug
+
+        {
+            signingConfig signingConfigs.release
+        }
     }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'com.google.firebase:firebase-auth:23.0.0'
+    implementation 'com.google.firebase:firebase-core:21.1.1'
+    implementation 'com.google.gms:google-services:4.1.0'
 }
 
 flutter {

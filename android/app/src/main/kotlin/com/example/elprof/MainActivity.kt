@@ -1,4 +1,4 @@
-package com.elprof.app
+package com.prof.app
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,174 +1,57 @@
 {
   "project_info": {
-    "project_number": "562410516751",
-    "project_id": "marwa-911fd",
-    "storage_bucket": "marwa-911fd.appspot.com"
+    "project_number": "532432873470",
+    "project_id": "el-prof-de416",
+    "storage_bucket": "el-prof-de416.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:562410516751:android:ec0c92bfce9a110c510e7a",
+        "mobilesdk_app_id": "1:532432873470:android:62d0d4d05eca47120282af",
         "android_client_info": {
-          "package_name": "com.arcplan.app"
+          "package_name": "com.prof.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "562410516751-hiidjnprgh9tmmbvq85kmi86k948vt2f.apps.googleusercontent.com",
+          "client_id": "532432873470-a7t9nlcn8logp08ml7bh1rmd79ko8ipf.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.arcplan.app",
-            "certificate_hash": "730c28898ed4f89cd88cb7d8eac3263b1de7d3c2"
-          }
-        },
-        {
-          "client_id": "562410516751-1im3j2l4m0qe5inhrldlnecgbrruml25.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDkcqIk-Fl96sGDtrqtVU1xbAIUyTq0KWg"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "562410516751-1im3j2l4m0qe5inhrldlnecgbrruml25.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:562410516751:android:de73bc0a0c4bb32c510e7a",
-        "android_client_info": {
-          "package_name": "com.elprof.app"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "562410516751-c5skg2sger24l77hgac7lu7vsk6mg463.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.elprof.app",
+            "package_name": "com.prof.app",
             "certificate_hash": "84a571a8440bbc9e9695ed2b1eefbf337ef3acf9"
           }
         },
         {
-          "client_id": "562410516751-1im3j2l4m0qe5inhrldlnecgbrruml25.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDkcqIk-Fl96sGDtrqtVU1xbAIUyTq0KWg"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "562410516751-1im3j2l4m0qe5inhrldlnecgbrruml25.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:562410516751:android:9d8178c28f7c5409510e7a",
-        "android_client_info": {
-          "package_name": "com.italent.app"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "562410516751-vkvqgsime08clncvbcbo9ejlr9qj7suv.apps.googleusercontent.com",
+          "client_id": "532432873470-ft9q0vhe4srroqhfn5knm1ev930anqov.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.italent.app",
-            "certificate_hash": "22d83df9e8f8d9aaac52f44dad5d9f33219fb13b"
+            "package_name": "com.prof.app",
+            "certificate_hash": "2aeed2abea9e1a0c5d86c1b66b11ce52a5b900cd"
           }
         },
         {
-          "client_id": "562410516751-1im3j2l4m0qe5inhrldlnecgbrruml25.apps.googleusercontent.com",
+          "client_id": "532432873470-9kte1oarce221ka5b9l7it841uk8bast.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDkcqIk-Fl96sGDtrqtVU1xbAIUyTq0KWg"
+          "current_key": "AIzaSyBazXXGcSeJCm3vRJL4aIQ36w-NnkEyotY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "562410516751-1im3j2l4m0qe5inhrldlnecgbrruml25.apps.googleusercontent.com",
+              "client_id": "532432873470-9kte1oarce221ka5b9l7it841uk8bast.apps.googleusercontent.com",
               "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:562410516751:android:9771c898751bc253510e7a",
-        "android_client_info": {
-          "package_name": "com.mafaza.app"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "562410516751-1im3j2l4m0qe5inhrldlnecgbrruml25.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDkcqIk-Fl96sGDtrqtVU1xbAIUyTq0KWg"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
+            },
             {
-              "client_id": "562410516751-1im3j2l4m0qe5inhrldlnecgbrruml25.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:562410516751:android:4d4e8e0bf4fd1af0510e7a",
-        "android_client_info": {
-          "package_name": "com.marwa.app"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "562410516751-1im3j2l4m0qe5inhrldlnecgbrruml25.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDkcqIk-Fl96sGDtrqtVU1xbAIUyTq0KWg"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "562410516751-1im3j2l4m0qe5inhrldlnecgbrruml25.apps.googleusercontent.com",
-              "client_type": 3
+              "client_id": "532432873470-0aplbo5u4ue9mkovgjp2m0nhgmtb02ip.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.prof.app"
+              }
             }
           ]
         }

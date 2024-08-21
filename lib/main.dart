@@ -12,15 +12,6 @@ import 'package:elprof/pages/splash.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: const FirebaseOptions(
-      apiKey: 'AIzaSyDkcqIk-Fl96sGDtrqtVU1xbAIUyTq0KWg',
-      appId: '1:562410516751:android:ec0c92bfce9a110c510e7a',
-      messagingSenderId: '562410516751',
-      projectId: 'marwa-911fd',
-      storageBucket: 'marwa-911fd.appspot.com',
-    ),
-  );
   await initializeApp();
   }
 
@@ -120,7 +111,7 @@ class MyApp extends StatelessWidget {
 
   Widget _getHomePage() {
     if (isEmulator || isDeveloperModeEnabled || isRooted || !isVersionValid) {
-      return WarningPage(); // Show WarningPage for invalid conditions
+      return SplashScreen(); // Show WarningPage for invalid conditions
     } else {
       return SplashScreen();
     }
